@@ -7,7 +7,7 @@ public final class MyCat {
     final private String catName;
     final private String catBirthDate;
     final private String catColor;
-     private List<Object> arrKitty;  // inner collection for store across "deep clone"
+     private List<MyCat> arrKitty;  // inner collection for store across "deep clone"
 
     SimpleDateFormat formatForBirthDate = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -19,7 +19,7 @@ public final class MyCat {
         this.catBirthDate = formatForBirthDate.format(catBirthNow);
     }
 
-    public MyCat(String CatName, String CatColor, List<Object> ArrKitty) {
+    public MyCat(String CatName, String CatColor, List<MyCat> ArrKitty) {
         this.catName = CatName;
         this.catColor = CatColor;
 
@@ -27,8 +27,8 @@ public final class MyCat {
          * block performing "deep clone" for collection using temporary/intermediate collection
          * one realisation - using foreach cycle
          */
-        List<Object> tempListKitty = new ArrayList<>();  // for temporary/intermediate collection
-        for (Object obj : ArrKitty) {
+        List<MyCat> tempListKitty = new ArrayList<>();  // for temporary/intermediate collection
+        for (MyCat obj : ArrKitty) {
             tempListKitty.add(obj);
         }
         this.arrKitty = tempListKitty;
@@ -43,7 +43,7 @@ public final class MyCat {
         this.catBirthDate = date;
     }
 
-    public MyCat (String CatName, String CatColor, List<Object> ArrKitty, String date) {
+    public MyCat (String CatName, String CatColor, List<MyCat> ArrKitty, String date) {
         this.catName = CatName;
         this.catColor = CatColor;
         this.catBirthDate = date;
@@ -52,10 +52,10 @@ public final class MyCat {
          * block performing "deep clone" for collection using temporary/intermediate collection
          * another realisation - across Iterator
          */
-        List<Object> tempListKitty = new ArrayList<>();  // for temporary/intermediate collection
+        List<MyCat> tempListKitty = new ArrayList<>();  // for temporary/intermediate collection
         Iterator iterator = ArrKitty.iterator();
         while (iterator.hasNext()) {
-            tempListKitty.add(iterator.next());
+            tempListKitty.add((MyCat) iterator.next());
         }
         this.arrKitty = tempListKitty;
     }
@@ -121,7 +121,7 @@ public final class MyCat {
     }
 
     public List getListKitty() {
-        List<Object> unmodifiableArrKitty = Collections.unmodifiableList(arrKitty);  // collection wrapper for unmodifiable storing into the wrapped collection
+        List<MyCat> unmodifiableArrKitty = Collections.unmodifiableList(arrKitty);  // collection wrapper for unmodifiable storing into the wrapped collection
         return unmodifiableArrKitty;
     }
 }

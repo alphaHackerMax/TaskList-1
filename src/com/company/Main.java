@@ -7,7 +7,6 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         List cat2generation = new ArrayList();
-        //MyCat cat1 = MyCat.createNewCat("Busa", "white", cat2generation);
         MyCat cat1 = new MyCat("Busa", "white", cat2generation);
         System.out.printf("cat1 name %s", cat1.getCatName());
         System.out.printf(" cat1 birth date %s", cat1.getCatBirthDate());
@@ -15,7 +14,6 @@ public class Main {
         System.out.printf(" hashCode %s", cat1.hashCode());
         System.out.printf(" Object %s\n", cat1);
 
-        //MyCat cat2 = MyCat.createNewCat("Pusa", "blue", cat2generation);
         MyCat cat2 = new MyCat("Pusa", "blue");
         System.out.printf("cat2 name %s", cat2.getCatName());
         System.out.printf(" cat2 birth date %s", cat2.getCatBirthDate());
@@ -23,7 +21,6 @@ public class Main {
         System.out.printf(" hashCode %s", cat2.hashCode());
         System.out.printf(" Object %s\n", cat2);
 
-         //cat2 = MyCat.createNewCat("Musa", "black", cat2generation);
         cat2 = new MyCat("Musa", "black");
         System.out.printf("cat2 name %s", cat2.getCatName());
         System.out.printf(" cat2 birth date %s", cat2.getCatBirthDate());
@@ -31,7 +28,6 @@ public class Main {
         System.out.printf(" hashCode %s", cat2.hashCode());
         System.out.printf(" Object %s -attempt to change or create new object\n", cat2);
 
-        //MyCat cat3 = MyCat.createNewCat("Kusa", "green", cat2generation);
         MyCat cat3 = new MyCat("Kusa", "green", "05-12-2018");
         System.out.printf("cat3 name %s", cat3.getCatName());
         System.out.printf(" cat3 birth date %s", cat3.getCatBirthDate());
@@ -63,7 +59,6 @@ public class Main {
         listKitty.add(cat1);
         listKitty.add(cat2);
         listKitty.add(cat3);
-        //MyCat cat4 = MyCat.createOldCate("Dusa", "red", listKitty, "01.04.2015");
         MyCat cat4 = new MyCat("Dusa", "red", listKitty, "01.04.2015");
         System.out.printf("cat4 name %s", cat4.getCatName());
         System.out.printf(" cat4 birth date %s", cat4.getCatBirthDate());
